@@ -41,7 +41,7 @@ function M.get_nvim_toggle_state_file_path()
 	end
 
 	-- State file is per-tab, located within a 'tmp' subdirectory of the WezTerm config directory.
-	return M.opts.wezterm_config_dir .. "/tmp/wezterm_toggle_pane_tab_" .. current_tab_id .. ".json"
+	return M.opts.wezterm_config_dir .. "tmp/wezterm_toggle_pane_tab_" .. current_tab_id .. ".json"
 end
 
 --- Reads the JSON state file and extracts the pane ID.
