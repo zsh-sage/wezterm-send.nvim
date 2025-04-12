@@ -34,7 +34,16 @@ M.setup = function(args)
 end
 
 -- Set initial opts reference (optional, setup will overwrite)
-WeztermSend.opts = M.config
+local expanded_config_dir = vim.fn.expand(M.config.wezterm_config_dir)
+
+WeztermSend.opts = {
+	auto_unzoom = M.config.auto_unzoom,
+	auto_activate_pane = M.config.auto_activate_pane,
+	wezterm_config_dir = expanded_config_dir,
+}
+WeztermSend.Panes.opts = {
+	wezterm_config_dir = WeztermSend.opts.wezterm_config_dir,
+}
 
 M.send_text_to_pane_id = function(pane_id, text, execute)
 	return WeztermSend.send_text_to_pane_id(pane_id, text, execute)
