@@ -8,6 +8,10 @@ A Neovim plugin for easily sending commands to WezTerm panes.
   ```lua
    return {
        "zsh-sage/wezterm-send.nvim",
+       dependencies = {
+           'willothy/wezterm.nvim',
+           config = true
+       },
    }
   ```
 
@@ -17,6 +21,10 @@ A Neovim plugin for easily sending commands to WezTerm panes.
   ```lua
   return {
       "zsh-sage/wezterm-send.nvim",
+      dependencies = {
+           'willothy/wezterm.nvim',
+           config = true
+      },
       opts = {
           -- Automatically unzoom the WezTerm pane if it's zoomed
           auto_unzoom = true,
