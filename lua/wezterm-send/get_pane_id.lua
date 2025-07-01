@@ -78,7 +78,7 @@ function M.get_pane_id_from_json_file(file_path)
 	if
 		type(decoded_state) ~= "table"
 		or decoded_state.active ~= true -- Check specifically for true
-		or not decoded_state.pane_id
+		or not decoded_state.state_table.pane_id
 	then
 		vim.notify(
 			"Invalid or inactive state found in JSON file: " .. file_path .. "\nState: " .. vim.inspect(decoded_state),
