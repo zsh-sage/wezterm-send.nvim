@@ -87,7 +87,7 @@ function M.get_pane_id_from_json_file(file_path)
 		return nil
 	end
 
-	local target_pane_id = tonumber(decoded_state.pane_id)
+	local target_pane_id = tonumber(decoded_state.state_table.pane_id)
 
 	-- check if pane is valid
 	if not target_pane_id or target_pane_id <= 0 then
