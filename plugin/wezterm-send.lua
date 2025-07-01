@@ -44,7 +44,7 @@ vim.api.nvim_create_user_command("WeztermExecPaneId", function(opts)
 	end
 
 	-- Join the rest of the arguments as the command
-	local command_to_exec = table.concat({ table.unpack(opts.fargs, 2) }, " ")
+	local command_to_exec = table.concat({ unpack(opts.fargs, 2) }, " ")
 
 	WeztermSend.send_text_to_pane_id(pane_id, command_to_exec, true) -- execute = true
 end, {
